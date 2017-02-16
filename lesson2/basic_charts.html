@@ -15,7 +15,10 @@
           var margin = 75,
               width = 1400 - margin,
               height = 600 - margin;
-
+        /*  d3.select("body")
+            .append("h2")
+            .text("World Cup Attendance");
+        */
           var svg = d3.select("body")
             .append("svg")
               .attr("width", width + margin)
@@ -26,8 +29,15 @@
       /*
         Dimple.js Chart construction code
       */
+      debugger;
 
-          var myChart = new dimple.chart(svg, data);
+          d3.select('svg')
+            .selectAll("circle")
+            .data(data)
+            .enter()
+            .append("circle");
+      debugger;
+
           var x = myChart.addTimeAxis("x", "year"); 
           myChart.addMeasureAxis("y", "attendance");
           myChart.addSeries(null, dimple.plot.bar);

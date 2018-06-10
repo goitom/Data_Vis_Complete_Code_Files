@@ -64,12 +64,13 @@
                         .text(function(d) {
                             return d;
                         });
-
+        debugger;
         var projection = d3.geo.mercator()
                                .scale(140)
                                .translate([width / 2, height / 1.2]);
 
         var path = d3.geo.path().projection(projection);
+        debugger;
 
         var map = svg.selectAll('path')
                      .data(geo_data.features)
@@ -79,6 +80,7 @@
                      .style('fill', 'lightBlue')
                      .style('stroke', 'black')
                      .style('stroke-width', 0.5);
+        debugger;
 
         function plot_points(data) {
             
